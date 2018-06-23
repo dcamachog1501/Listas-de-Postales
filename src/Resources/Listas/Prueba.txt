@@ -1,5 +1,0 @@
----------------Lista Generada---------------
-Dueño: Prueba
-Numero de postales a cambiar: 1
-Postales a cambiar: 
-640 
