@@ -1,0 +1,6 @@
+---------------Lista Generada---------------
+Dueño: Deynner Calvo(Casemiro)
+Numero de postales a cambiar: 13
+Postales a cambiar: 
+9 109 147 192 209 268 303 423
+449 463 650 101 640 

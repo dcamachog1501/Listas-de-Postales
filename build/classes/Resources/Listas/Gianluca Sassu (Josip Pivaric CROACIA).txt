@@ -1,0 +1,7 @@
+---------------Lista Generada---------------
+Dueño: Gianluca Sassu (Josip Pivaric CROACIA)
+Numero de postales a cambiar: 20
+Postales a cambiar: 
+15 38 41 50 51 67 69 82
+94 107 169 176 196 201 275 423
+449 517 657 640 
