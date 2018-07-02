@@ -28,8 +28,11 @@ public class Interface
         this.ownerList=new Lista();
         this.ownerList.setName("ownerList");
         this.ownerList.newOwner();
+        this.ownerList.unify();
+        this.ownerList.sort();
+        this.ownerList.saveOwner("ownerList");
         this.ownerList.printAll();
-        System.out.println("Posteales en la base: "+ownerList.getAll());
+        System.out.println("Postales en la base: "+ownerList.getAll());
         Init();
     }
     public void Init() throws FileNotFoundException, IOException
@@ -99,7 +102,6 @@ public class Interface
             }
             else if(l==2)
             {
-                ownerList.sort();
                 ownerList.printAll();
                 System.out.println("Cantidad de postales en la base: "+ownerList.getAll());
             }

@@ -285,6 +285,7 @@ public class Lista
     public void sort()
     {
         this.removeSpaces();
+        this.unify();
         while(true)
         {
             Boolean changes=false;
@@ -307,22 +308,55 @@ public class Lista
                         temp.setNext(temp.getNext().getNext());
                         t.setNext(temp);
                         temp2.setNext(t);
-                        temp2=t;
                     }
                     changes=true;
                 }
-                else
+                temp2=temp;
+                temp=temp.getNext();
+                if(temp==null)
                 {
-                    temp2=temp;
-                    temp=temp.getNext();
+                    break;
                 }
+                
             }
             if(!changes)
             {
                 break;
             }
+         
         }
                 
+    }
+    public void unify()
+    {
+        Lista n= new Lista();
+        Nodo temp=this.head;
+        while (temp!=null)
+        {
+            if(n.lookFor(temp))
+            {
+               n.addToElement(temp);
+            }
+            else
+            {
+                n.add(temp);
+            }
+            temp=temp.getNext();
+        }
+        this.head=n.getHead();
+    }
+    public void addToElement(Nodo n)
+    {
+        Nodo temp=this.head;
+        while(true)
+        {
+            if(temp.getNum().equals(n.getNum()))
+            {
+                temp.setQuantity(Integer.toString(Integer.parseInt(temp.getQuantity())+Integer.parseInt(n.getQuantity())));
+                break;
+            }
+            temp=temp.getNext();
+        }
     }
     
 }
