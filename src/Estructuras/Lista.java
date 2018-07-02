@@ -56,9 +56,17 @@ public class Lista
             Nodo temp= this.head;
             while(temp.getNext()!=null)
             {
+                if(temp.getNum().equals(n.getNum()))
+                {
+                    temp.setQuantity(Integer.toString(Integer.parseInt(temp.getQuantity())+Integer.parseInt(n.getQuantity())));
+                    break;
+                }
                 temp=temp.getNext();
             }
-            temp.setNext(new Nodo(n.getNum(),n.getQuantity()));
+            if(temp.getNext()==null)
+            {
+                temp.setNext(new Nodo(n.getNum(),n.getQuantity()));
+            }
         }
         len++;
     }
@@ -90,6 +98,7 @@ public class Lista
             System.out.println(temp.getNum()+"--> Cantidad: "+temp.getQuantity());
             temp=temp.getNext();
         }
+        
     }
     public Lista compare(Lista l)
     {
@@ -258,4 +267,62 @@ public class Lista
         this.head=null;
         this.len=0;
     }
+    public int getLen()
+    {
+        return this.len;
+    }
+    public int getAll()
+    {
+        Nodo temp= this.head;
+        int i=0;
+        while (temp!=null)
+        {
+              i+=Integer.parseInt(temp.getQuantity());
+              temp=temp.getNext();
+        }
+        return i;
+    }
+    public void sort()
+    {
+        this.removeSpaces();
+        while(true)
+        {
+            Boolean changes=false;
+            Nodo temp=this.head;
+            Nodo temp2=this.head;
+            while (temp.getNext()!=null)
+            {
+                if(Integer.parseInt(temp.getNum())>Integer.parseInt(temp.getNext().getNum()))
+                {
+                    if(temp==this.head)
+                    {
+                        Nodo t=temp.getNext();
+                        temp.setNext(temp.getNext().getNext());
+                        t.setNext(temp);
+                        this.head=t;
+                    }
+                    else
+                    {
+                        Nodo t=temp.getNext();
+                        temp.setNext(temp.getNext().getNext());
+                        t.setNext(temp);
+                        temp2.setNext(t);
+                        temp2=t;
+                    }
+                    changes=true;
+                }
+                else
+                {
+                    temp2=temp;
+                    temp=temp.getNext();
+                }
+            }
+            if(!changes)
+            {
+                break;
+            }
+        }
+                
+    }
+    
 }

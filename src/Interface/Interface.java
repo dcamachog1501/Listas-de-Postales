@@ -8,6 +8,7 @@ package Interface;
 import Estructuras.ListList;
 import Estructuras.Lista;
 import Estructuras.Nodo;
+import java.awt.BorderLayout;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -28,6 +29,7 @@ public class Interface
         this.ownerList.setName("ownerList");
         this.ownerList.newOwner();
         this.ownerList.printAll();
+        System.out.println("Posteales en la base: "+ownerList.getAll());
         Init();
     }
     public void Init() throws FileNotFoundException, IOException
@@ -57,9 +59,11 @@ public class Interface
                     {
                         System.out.println("Postales ingresadas: ");
                         nuevalista.printAll();
+                        System.out.println("Cantidad: "+nuevalista.getAll());
                         System.out.println("Postales encontradas en la base: ");
                         Lista found=ownerList.compare(nuevalista);
                         found.printAll();
+                        System.out.println("Cantidad: "+found.getLen());
                         while(true)
                         {
                             System.out.println(">¿Desea guardar la lista?  Y/N");
@@ -95,7 +99,9 @@ public class Interface
             }
             else if(l==2)
             {
+                ownerList.sort();
                 ownerList.printAll();
+                System.out.println("Cantidad de postales en la base: "+ownerList.getAll());
             }
             else if(l==3)
             {
@@ -114,6 +120,7 @@ public class Interface
                 }
                 System.out.println("Postales añadidas: ");
                 n.printAll();
+                System.out.println("Cantidad de postales a añadir: "+n.getAll());
                 System.out.println("¿Desea guardar el set de postales? Y/N");
                 String r = reader.nextLine();
                 if(r.toLowerCase().equals("y"))

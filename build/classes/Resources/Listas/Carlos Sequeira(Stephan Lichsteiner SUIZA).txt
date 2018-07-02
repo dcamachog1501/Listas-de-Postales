@@ -1,8 +1,0 @@
----------------Lista Generada---------------
-Dueño: Carlos Sequeira(Stephan Lichsteiner SUIZA)
-Numero de postales a cambiar: 26
-Postales a cambiar: 
-9 10 30 38 67 82 83 126
-147 149 184 209 227 236 238 265
-303 335 361 447 505 532 537 544
-570 640 
